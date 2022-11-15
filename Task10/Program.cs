@@ -10,8 +10,8 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int SecondDigitInNumber(int numb)
 {
-    return (numb / 10) % 10;
+    return (Math.Abs(numb) / 10) % 10;
 }
 
-if (number > 99 && number < 1000) Console.WriteLine($"Вторая цифра числа - {SecondDigitInNumber(number)}");
+if (Math.Abs(number) > 99 && Math.Abs(number) < 1000) Console.WriteLine($"Вторая цифра числа --> {SecondDigitInNumber(number)}");
 else Console.WriteLine("Число не трехзначное");
