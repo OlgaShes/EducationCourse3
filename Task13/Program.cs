@@ -9,29 +9,28 @@ Console.Clear();
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-// int LastDigit(int numb)
+// int ThirdDigit(int numb)
 // {
-//     return Math.Abs(number) % 10;
+//     numb = Math.Abs(numb);
+//     while (numb > 999)
+//     {
+//         numb = numb / 10;
+//     }
+//     return numb % 10;
 // }
 
 // if (Math.Abs(number) < 100) Console.WriteLine("Третьей цифры нет");
-// else
-// {
-//     while (Math.Abs(number) > 999)
-//     {
-//         number = number / 10;
-//     }
-//     Console.WriteLine("Третья цифра числа --> " + LastDigit(number));
-// }
+// else Console.WriteLine("Третья цифра числа --> " + ThirdDigit(number));
 
 int DigitInPos(int numb, int pos)
 {
-    if (Math.Abs(numb) < Math.Pow(10, pos - 1)) return -1;
-    while (Math.Abs(numb) >=  Math.Pow(10, pos))
-        {
-            numb = numb / 10;
-        }
-    return Math.Abs(numb) % 10;
+    numb = Math.Abs(numb);
+    if (numb < Math.Pow(10, pos - 1)) return -1;
+    while (numb >= Math.Pow(10, pos))
+    {
+        numb = numb / 10;
+    }
+    return numb % 10;
 }
 
 int position = 3;
