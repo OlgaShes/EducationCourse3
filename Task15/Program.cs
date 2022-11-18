@@ -9,11 +9,19 @@ Console.Clear();
 Console.Write("Введите цифру, соответствующую дню недели: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-string IfWeekend(int numb)
+// string IfWeekend(int numb)
+// {
+//     if (numb >= 1 && numb <= 5) return "Не выходной";
+//     else if (numb == 6 || numb == 7) return "Выходной";
+//     return "Не день недели";
+// }
+
+// Console.WriteLine(IfWeekend(number));
+
+bool IfWeekend (int numb)
 {
-    if (numb >= 1 && number <= 5) return "Не выходной";
-    else if (numb == 6 || numb == 7) return "Выходной";
-    return "Не день недели";
+    return numb == 6 || numb == 7 ? true : false;
 }
 
-Console.WriteLine(IfWeekend(number));
+if (number < 1 || number > 7) Console.WriteLine("Нет дня недели с данным номером");
+else Console.WriteLine(IfWeekend(number) ? "Этот день недели - выходной" : "Этот день недели не выходной");
